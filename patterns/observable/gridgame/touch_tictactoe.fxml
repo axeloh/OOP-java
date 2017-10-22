@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="939.0" prefWidth="783.0" spacing="15" style="-fx-padding: 20px 20px 20px 20px" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="patterns.observable.gridgame.Touch_GenericGameController">
+	<!-- Hvis du oensker aa endre stoerrelsen paa konsollen kan det gjoeres ved endre prefRowCount and prefColumnCount paa linja under -->
+	<TextArea fx:id="console" prefColumnCount="30" prefHeight="213.0" prefRowCount="20" prefWidth="743.0" style="-fx-font-family: monospace">
+	</TextArea>
+	<HBox alignment="CENTER" prefHeight="27.0" prefWidth="583.0" spacing="10">
+	   <Label text="Input" />
+	   <TextField fx:id="inputField" />
+	   <Button onAction="#sendInput" text="Send Input" />
+	</HBox>
+	<HBox alignment="CENTER" prefHeight="27.0" prefWidth="634.0" spacing="50">
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<Button fx:id="undoButton" onAction="#undo" text="Undo" />
+			<Button fx:id="redoButton" onAction="#redo" text="Redo" />
+			<Button fx:id="AIButton" onAction="#doAIMove" text="AI-move" />
+		</HBox>
+		<VBox spacing="10">
+			<HBox alignment="CENTER" prefHeight="27.0" prefWidth="268.0" spacing="10">
+				<Label text="File name" />
+				<TextField fx:id="fileName" />
+			</HBox>
+		</VBox>
+			<HBox alignment="CENTER" spacing="10">
+				<Button onAction="#save" text="Save" />
+				<Button onAction="#load" text="Load" />
+			</HBox>
+	</HBox>
+	<GridPane fx:id="gameGrid" maxWidth="-Infinity" prefHeight="368.0" prefWidth="737.0">
+	</GridPane>
+   <GridPane prefHeight="112.0" prefWidth="743.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="250.0" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="247.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="265.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="41.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <ButtonBar prefHeight="40.0" prefWidth="200.0">
+           <buttons>
+             <Button fx:id="oo" onAction="#playoo" mnemonicParsing="false" prefHeight="27.0" prefWidth="437.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="1">
+           <buttons>
+             <Button fx:id="oi" onAction="#playoi"  mnemonicParsing="false" prefHeight="27.0" prefWidth="383.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="34.0" prefWidth="241.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+           <buttons>
+             <Button fx:id="it" onAction="#playit"  mnemonicParsing="false" prefHeight="27.0" prefWidth="273.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="18.0" prefWidth="243.0" GridPane.rowIndex="2">
+           <buttons>
+             <Button fx:id="ot" onAction="#playot"  mnemonicParsing="false" prefHeight="27.0" prefWidth="267.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="45.0" prefWidth="241.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+           <buttons>
+             <Button fx:id="ii" onAction="#playii"  mnemonicParsing="false" prefHeight="27.0" prefWidth="251.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1">
+           <buttons>
+             <Button fx:id="io" onAction="#playio" mnemonicParsing="false" prefHeight="27.0" prefWidth="286.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="2">
+           <buttons>
+             <Button fx:id="to" onAction="#playto" mnemonicParsing="false" prefHeight="27.0" prefWidth="266.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="54.0" prefWidth="259.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+           <buttons>
+             <Button fx:id="ti" onAction="#playti"  mnemonicParsing="false" prefHeight="27.0" prefWidth="271.0" />
+           </buttons>
+         </ButtonBar>
+         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+           <buttons>
+             <Button fx:id="tt" onAction="#playtt"  mnemonicParsing="false" prefHeight="27.0" prefWidth="277.0" />
+           </buttons>
+         </ButtonBar>
+      </children>
+   </GridPane>
+</VBox>
